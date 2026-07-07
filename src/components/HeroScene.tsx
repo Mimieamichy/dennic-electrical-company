@@ -392,7 +392,7 @@ export function HeroScene({ progressRef }: { progressRef: React.MutableRefObject
       dpr={[1, 1.6]}
       gl={{ antialias: true, powerPreference: "high-performance" }}
       camera={{ position: [0, 2.2, 9], fov: 42 }}
-      className="!fixed inset-0"
+      className="absolute inset-0"
     >
       <Suspense fallback={null}>
         <Scene progress={p} />
