@@ -377,42 +377,44 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             {project.name}
           </h3>
 
-          <div className="mt-5 grid gap-4 sm:grid-cols-4">
-            {[
-              { k: "Client", v: project.client },
-              { k: "Location", v: project.location },
-              { k: "Year", v: project.year },
-              { k: "Duration", v: project.duration },
-            ].map((it) => (
-              <div key={it.k}>
-                <div className="mono text-[9px] uppercase tracking-[0.28em] text-white/40">{it.k}</div>
-                <div className="mt-1 text-sm text-white/85">{it.v}</div>
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_280px]">
+            {/* Magazine columns */}
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div>
+                <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">Overview</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/70 sm:text-[15px]">{project.summary}</p>
               </div>
-            ))}
-          </div>
-
-          <div className="mt-6">
-            <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">Overview</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70 sm:text-[15px]">{project.summary}</p>
-          </div>
-
-          <div className="mt-6">
-            <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">Scope of Works</div>
-            <ul className="mt-3 space-y-2">
-              {project.scope.map((s) => (
-                <li key={s} className="flex items-start gap-3 text-sm text-white/75">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
-                  <span>{s}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <div className="mono text-sm text-white/60">
-              <span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-2">Stat</span>
-              {project.stat}
+              <div>
+                <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">Scope of Works</div>
+                <ul className="mt-3 space-y-2">
+                  {project.scope.map((s) => (
+                    <li key={s} className="flex items-start gap-3 text-sm text-white/75">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+
+            {/* Sidebar metadata */}
+            <aside className="space-y-5 border-b border-white/10 pb-6 lg:border-b-0 lg:border-l lg:border-white/10 lg:pb-0 lg:pl-8">
+              {[
+                { k: "Client", v: project.client },
+                { k: "Location", v: project.location },
+                { k: "Year", v: project.year },
+                { k: "Duration", v: project.duration },
+                { k: "Stat", v: project.stat },
+              ].map((it) => (
+                <div key={it.k}>
+                  <div className="mono text-[9px] uppercase tracking-[0.28em] text-white/40">{it.k}</div>
+                  <div className="mt-1 text-sm font-medium text-white/90">{it.v}</div>
+                </div>
+              ))}
+            </aside>
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/10 pt-6">
             <Link
               to="/contact"
               onClick={onClose}
