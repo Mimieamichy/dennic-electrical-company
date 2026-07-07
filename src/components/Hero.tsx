@@ -106,16 +106,15 @@ export function Hero({ onComplete }: { onComplete?: () => void }) {
         </div>
 
         {/* Scene text */}
-        <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-10 sm:px-6 sm:pb-14 md:px-14 md:pb-20">
-          <div className="max-w-2xl">
+        <div className="absolute inset-x-0 bottom-0 z-50 px-4 pb-24 sm:px-6 sm:pb-28 md:px-14 md:pb-24 lg:pb-12">
+          <div className="max-w-2xl grid">
             {SCENES.map((s, i) => (
               <div
                 key={i}
-                className="transition-all duration-500 ease-out"
+                className="transition-all duration-500 ease-out col-start-1 row-start-1"
                 style={{
                   opacity: i === active ? 1 : 0,
                   transform: `translateY(${i === active ? 0 : 12}px)`,
-                  position: i === active ? "relative" : "absolute",
                   pointerEvents: i === active ? "auto" : "none",
                 }}
               >

@@ -1,10 +1,10 @@
-import logoAsset from "@/assets/dennic-logo.png.asset.json";
+import logoAsset from "@/assets/logo.png";
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
       <img
-        src={logoAsset.url}
+        src={logoAsset}
         alt="Dennic Electrical Construction Company"
         className="h-9 w-9 shrink-0 object-contain"
       />

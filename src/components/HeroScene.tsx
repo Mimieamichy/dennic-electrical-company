@@ -380,7 +380,9 @@ function Scene({ progress }: { progress: number }) {
 
       <Particles intensity={Math.max(s2, s4)} />
 
-      <Environment preset="night" />
+      <Suspense fallback={null}>
+        <Environment preset="night" />
+      </Suspense>
     </>
   );
 }

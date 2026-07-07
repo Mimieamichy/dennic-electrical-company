@@ -99,7 +99,6 @@
     color: var(--color-foreground);
     font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
   }
   ::selection { background: var(--volt); color: var(--navy-deep); }
 }

@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   return (
-    <main className="relative min-h-screen bg-[color:var(--navy-deep)] text-white">
+    <main className="relative min-h-screen bg-[color:var(--navy-deep)] text-white pt-24 sm:pt-28 md:pt-32">
       <Header variant="solid" />
       <Contact />
       <Footer />

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 
 const NAV = [
+  { label: "Home", to: "/" as const },
   { label: "Services", to: "/services" as const },
   { label: "Projects", to: "/projects" as const },
   { label: "About", to: "/about" as const },

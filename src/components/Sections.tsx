@@ -125,10 +125,7 @@ export function Services() {
               </div>
               <h3 className="font-display text-xl font-semibold text-white">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-white/60">{s.desc}</p>
-              <div className="mt-8 flex items-center gap-2 mono text-[11px] uppercase tracking-[0.28em] text-white/40 transition group-hover:text-[color:var(--volt)]">
-                Explore capability
-                <ArrowUpRight className="h-3.5 w-3.5" />
-              </div>
+
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[color:var(--volt)]/60 to-transparent opacity-0 transition group-hover:opacity-100" />
             </motion.div>
           ))}
@@ -315,7 +312,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-3 backdrop-blur-sm sm:p-6" onClick={onClose}>
       <div
-        className="relative flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--navy-deep)] shadow-2xl"
+        className="relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--navy-deep)] shadow-2xl lg:grid lg:grid-cols-[1.2fr_1fr]"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -328,7 +325,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         </button>
 
         {/* Carousel */}
-        <div className="relative aspect-[16/9] w-full bg-black">
+        <div className="relative aspect-[16/9] w-full shrink-0 bg-black lg:h-full lg:aspect-auto">
           <img
             src={project.images[idx]}
             alt={`${project.name} — image ${idx + 1}`}
@@ -369,7 +366,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         </div>
 
         {/* Details */}
-        <div className="overflow-y-auto p-5 sm:p-8">
+        <div className="flex-1 min-h-0 overflow-y-auto p-6 sm:p-10 lg:p-12 lg:h-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           <div className="mono text-[10px] uppercase tracking-[0.3em] text-[color:var(--volt)]">
             {project.n} · {project.tag}
           </div>
@@ -377,28 +374,25 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             {project.name}
           </h3>
 
-          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_280px]">
-            {/* Magazine columns */}
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">Overview</div>
-                <p className="mt-2 text-sm leading-relaxed text-white/70 sm:text-[15px]">{project.summary}</p>
-              </div>
-              <div>
-                <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">Scope of Works</div>
-                <ul className="mt-3 space-y-2">
-                  {project.scope.map((s) => (
-                    <li key={s} className="flex items-start gap-3 text-sm text-white/75">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
-                      <span>{s}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="mt-10 flex flex-col gap-10">
+            <div>
+              <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">Overview</div>
+              <p className="mt-3 text-[15px] leading-relaxed text-white/75">{project.summary}</p>
             </div>
 
-            {/* Sidebar metadata */}
-            <aside className="space-y-5 border-b border-white/10 pb-6 lg:border-b-0 lg:border-l lg:border-white/10 lg:pb-0 lg:pl-8">
+            <div>
+              <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">Scope of Works</div>
+              <ul className="mt-4 space-y-3">
+                {project.scope.map((s) => (
+                  <li key={s} className="flex items-start gap-3 text-[15px] text-white/75">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <aside className="grid grid-cols-2 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
               {[
                 { k: "Client", v: project.client },
                 { k: "Location", v: project.location },
@@ -408,7 +402,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               ].map((it) => (
                 <div key={it.k}>
                   <div className="mono text-[9px] uppercase tracking-[0.28em] text-white/40">{it.k}</div>
-                  <div className="mt-1 text-sm font-medium text-white/90">{it.v}</div>
+                  <div className="mt-1.5 text-sm font-medium text-white/90">{it.v}</div>
                 </div>
               ))}
             </aside>
@@ -643,9 +637,9 @@ export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[color:var(--navy-deep)] px-4 pt-14 pb-10 sm:px-6 md:px-10 md:pt-20">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 md:grid-cols-12">
+        <div className="grid grid-cols-2 gap-10 md:grid-cols-12">
           {/* Brand */}
-          <div className="md:col-span-4">
+          <div className="col-span-2 md:col-span-4">
             <Logo />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
               Dennic Electrical Construction Company designs, constructs and commissions
@@ -668,7 +662,7 @@ export function Footer() {
           </div>
 
           {/* Quick links */}
-          <div className="md:col-span-2">
+          <div className="col-span-1 md:col-span-2">
             <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">
               Quick Links
             </div>
@@ -687,7 +681,7 @@ export function Footer() {
           </div>
 
           {/* Services */}
-          <div className="md:col-span-3">
+          <div className="col-span-1 md:col-span-3">
             <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">
               Services
             </div>
@@ -706,7 +700,7 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="md:col-span-3">
+          <div className="col-span-2 md:col-span-3">
             <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">
               Get In Touch
             </div>

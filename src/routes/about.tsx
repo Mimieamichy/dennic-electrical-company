@@ -18,13 +18,9 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <main className="relative min-h-screen bg-[color:var(--navy-deep)] text-white">
+    <main className="relative min-h-screen bg-[color:var(--navy-deep)] text-white pt-24 sm:pt-28 md:pt-32">
       <Header variant="solid" />
-      <PageHero
-        kicker="About Dennic"
-        title="Engineering reliable power for two decades."
-        sub="We design, construct and commission mission-critical electrical infrastructure for utilities, industry and renewable operators across the region."
-      />
+     
       <About />
       <WhyUs />
       <Safety />
