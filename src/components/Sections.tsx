@@ -377,23 +377,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             {project.name}
           </h3>
 
-          <div className="mt-8 grid gap-8 lg:grid-cols-[280px_1fr]">
-            {/* Sidebar metadata */}
-            <aside className="space-y-5 border-b border-white/10 pb-6 lg:border-b-0 lg:border-l lg:border-white/10 lg:pb-0 lg:pl-8">
-              {[
-                { k: "Client", v: project.client },
-                { k: "Location", v: project.location },
-                { k: "Year", v: project.year },
-                { k: "Duration", v: project.duration },
-                { k: "Stat", v: project.stat },
-              ].map((it) => (
-                <div key={it.k}>
-                  <div className="mono text-[9px] uppercase tracking-[0.28em] text-white/40">{it.k}</div>
-                  <div className="mt-1 text-sm font-medium text-white/90">{it.v}</div>
-                </div>
-              ))}
-            </aside>
-
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_280px]">
             {/* Magazine columns */}
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
@@ -412,6 +396,22 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                 </ul>
               </div>
             </div>
+
+            {/* Sidebar metadata */}
+            <aside className="space-y-5 border-b border-white/10 pb-6 lg:border-b-0 lg:border-l lg:border-white/10 lg:pb-0 lg:pl-8">
+              {[
+                { k: "Client", v: project.client },
+                { k: "Location", v: project.location },
+                { k: "Year", v: project.year },
+                { k: "Duration", v: project.duration },
+                { k: "Stat", v: project.stat },
+              ].map((it) => (
+                <div key={it.k}>
+                  <div className="mono text-[9px] uppercase tracking-[0.28em] text-white/40">{it.k}</div>
+                  <div className="mt-1 text-sm font-medium text-white/90">{it.v}</div>
+                </div>
+              ))}
+            </aside>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/10 pt-6">
