@@ -11,7 +11,7 @@ const NAV = [
 export function Header({ variant = "overlay" }: { variant?: "overlay" | "solid" }) {
   const wrapperClass =
     variant === "overlay"
-      ? "absolute inset-x-0 top-0 z-30"
+      ? "fixed inset-x-0 top-0 z-40 bg-[color:var(--navy-deep)]/60 backdrop-blur-md"
       : "sticky top-0 z-40 border-b border-white/10 bg-[color:var(--navy-deep)]/90 backdrop-blur";
 
   return (
