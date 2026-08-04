@@ -74,12 +74,14 @@ export function About() {
 
 /* ============ Services ============ */
 const SERVICES = [
-  { icon: Cable, title: "Electrical Construction", desc: "Turnkey installation of cable systems, containment and terminations to IEC standards." },
-  { icon: Zap, title: "High Voltage Installations", desc: "Substations, switchyards and transformer works from 11 kV to 220 kV." },
-  { icon: Factory, title: "Industrial Electrical Systems", desc: "MCCs, VFDs, PLC integration and process electrification for heavy industry." },
-  { icon: Building2, title: "Commercial Projects", desc: "Full electrical fit-out for data centres, campuses and mixed-use developments." },
-  { icon: SunMedium, title: "Renewable Energy Integration", desc: "Solar farms, wind interconnection and BESS balance-of-plant." },
-  { icon: Wrench, title: "Maintenance & Testing", desc: "Predictive maintenance, thermography, protection relay testing and commissioning." },
+  { icon: Cable, title: "Construction of Lines", desc: "Expert construction and installation of electrical power lines for residential, commercial and industrial connections." },
+  { icon: Zap, title: "Transformer Installation", desc: "Professional installation of transformers for power distribution, ensuring safe and efficient voltage regulation." },
+  { icon: Building2, title: "House Wiring", desc: "Complete electrical house wiring services for new builds, renovations and rewiring projects to code standards." },
+  { icon: Factory, title: "Sales & Supply of Electrical Materials", desc: "Supply of quality electrical materials including cables, switches, sockets, fittings and accessories." },
+  { icon: Wrench, title: "Electrical Maintenance & Services", desc: "Routine and emergency maintenance services to keep your electrical systems running safely and efficiently." },
+  { icon: ShieldCheck, title: "Installation of Electrical Gadgets", desc: "Professional installation of all types of electrical gadgets and appliances in homes and businesses." },
+  { icon: SunMedium, title: "Solar Panel & Inverter Systems", desc: "Sales and installation of solar panels with inverters — clean, reliable off-grid and hybrid power solutions." },
+  { icon: Gauge, title: "Consultancy & General Contracting", desc: "Expert electrical consultancy services and general contracting for projects of all sizes across Anambra State and beyond." },
 ];
 
 export function Services() {
@@ -555,10 +557,11 @@ export function Contact() {
             title="Have a project? Let's engineer the power behind it."
             sub="Tell us about your site, load profile and timeline. A senior engineer will respond within one business day."
           />
-          <div className="space-y-3 mono text-sm text-white/60">
-            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Email</span> engineering@dennic.co</div>
-            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Phone</span> +1 (555) 013-2200</div>
-            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Ops</span> 24/7 Emergency Callout</div>
+          <div className="space-y-4 mono text-sm text-white/60">
+            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Email</span> dan.ntukokwu@gmail.com</div>
+            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Phone</span> 08069041115</div>
+            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Phone</span> 07043535279</div>
+            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Office</span> Km 2, Isuaniocha-Mgbakwu Road by Sharon Plaza, beside Palkon Hills &amp; Hotels, Isuaniocha, Awka North L.G.A, Anambra State</div>
           </div>
         </div>
         <form
@@ -618,19 +621,16 @@ const QUICK_LINKS = [
 ];
 
 const SERVICES_LINKS = [
-  "Electrical Construction",
-  "High Voltage Installations",
-  "Industrial Systems",
-  "Renewable Integration",
-  "Maintenance & Testing",
+  "Construction of Lines",
+  "Transformer Installation",
+  "House Wiring",
+  "Solar Panel & Inverter Systems",
+  "Electrical Maintenance & Services",
+  "Consultancy & General Contracting",
 ];
 
 const SOCIALS = [
-  { icon: Linkedin, href: "https://www.linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://www.twitter.com", label: "Twitter" },
-  { icon: Facebook, href: "https://www.facebook.com", label: "Facebook" },
-  { icon: Instagram, href: "https://www.instagram.com", label: "Instagram" },
-  { icon: Youtube, href: "https://www.youtube.com", label: "YouTube" },
+  { icon: Facebook, href: "https://web.facebook.com/daniel.ntukokwu.9", label: "Facebook" },
 ];
 
 export function Footer() {
@@ -707,19 +707,20 @@ export function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
-                <a href="mailto:engineering@dennic.co" className="transition hover:text-[color:var(--volt)]">
-                  engineering@dennic.co
+                <a href="mailto:dan.ntukokwu@gmail.com" className="transition hover:text-[color:var(--volt)]">
+                  dan.ntukokwu@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
-                <a href="tel:+15550132200" className="transition hover:text-[color:var(--volt)]">
-                  +1 (555) 013-2200
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:08069041115" className="transition hover:text-[color:var(--volt)]">08069041115</a>
+                  <a href="tel:07043535279" className="transition hover:text-[color:var(--volt)]">07043535279</a>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
-                <span>Regional service hubs · 24/7 Callout</span>
+                <span>Km 2, Isuaniocha-Mgbakwu Road by Sharon Plaza, beside Palkon Hills &amp; Hotels, Isuaniocha, Awka North L.G.A, Anambra State</span>
               </li>
             </ul>
           </div>

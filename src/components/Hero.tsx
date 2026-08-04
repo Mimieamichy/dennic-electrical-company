@@ -44,8 +44,10 @@ export function Hero({ onComplete }: { onComplete?: () => void }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const progress = useRef(0);
   const [active, setActive] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     // Lenis smooth scroll
     const lenis = new Lenis({ duration: 1.15, smoothWheel: true });
     const raf = (t: number) => { lenis.raf(t); requestAnimationFrame(raf); };
@@ -71,7 +73,7 @@ export function Hero({ onComplete }: { onComplete?: () => void }) {
     <div ref={wrapRef} className="relative" style={{ height: `${SCENES.length * 100}vh` }}>
       {/* fixed 3D layer */}
       <div className="sticky top-0 h-screen w-full overflow-hidden">
-        <HeroScene progressRef={progress} />
+        {mounted && <HeroScene progressRef={progress} />}
         {/* vignette + noise */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,0,0,0.6)_100%)]" />
         <div className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence baseFrequency=%22.9%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>')]" />
