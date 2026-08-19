@@ -20,7 +20,7 @@ const SCENES = [
   },
   {
     kicker: "Chapter 03 · Installation",
-    title: "Precision at High Voltage",
+    title: "Precision at High Crimsonage",
     body: "Switchgear, transformers, busbars and control cabinets — installed, torqued and tested to spec.",
   },
   {
@@ -75,7 +75,7 @@ export function Hero({ onComplete }: { onComplete?: () => void }) {
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {mounted && <HeroScene progressRef={progress} />}
         {/* vignette + noise */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,0,0,0.6)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(255,255,255,0.6)_100%)]" />
         <div className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence baseFrequency=%22.9%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>')]" />
         {/* top nav */}
         <Header variant="overlay" />
@@ -84,8 +84,8 @@ export function Hero({ onComplete }: { onComplete?: () => void }) {
         <div className="pointer-events-none absolute inset-y-0 left-6 z-20 hidden flex-col justify-center gap-3 md:flex">
           {SCENES.map((s, i) => (
             <div key={i} className="flex items-center gap-3">
-              <span className={`h-px transition-all ${i === active ? "w-10 bg-[color:var(--volt)]" : "w-4 bg-white/30"}`} />
-              <span className={`mono text-[10px] uppercase tracking-[0.3em] transition ${i === active ? "text-[color:var(--volt)]" : "text-white/40"}`}>
+              <span className={`h-px transition-all ${i === active ? "w-10 bg-[color:var(--crimson)]" : "w-4 bg-white/30"}`} />
+              <span className={`mono text-[10px] uppercase tracking-[0.3em] transition ${i === active ? "text-[color:var(--crimson)]" : "text-navy"}`}>
                 0{i + 1}
               </span>
             </div>
@@ -94,14 +94,14 @@ export function Hero({ onComplete }: { onComplete?: () => void }) {
 
         {/* Corner HUD readouts */}
         <div className="pointer-events-none absolute right-6 top-24 z-20 hidden text-right md:block">
-          <div className="mono text-[10px] uppercase tracking-[0.3em] text-white/50">System Status</div>
+          <div className="mono text-[10px] uppercase tracking-[0.3em] text-navy">System Status</div>
           <div className="mt-1 flex items-center justify-end gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--volt)] animate-pulse-volt" />
-            <span className="mono text-[11px] text-white/80">
+            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--crimson)] animate-pulse-crimson" />
+            <span className="mono text-[11px] text-navy">
               {active < 3 ? "BUILD MODE" : active < 4 ? "ENERGIZING" : "GRID ONLINE"}
             </span>
           </div>
-          <div className="mt-3 mono text-[10px] text-white/40">
+          <div className="mt-3 mono text-[10px] text-navy">
             LOAD {Math.round((active + 1) * 16.6)}%<br />
             VOLT 13.8 kV · 50 Hz
           </div>
@@ -120,13 +120,13 @@ export function Hero({ onComplete }: { onComplete?: () => void }) {
                   pointerEvents: i === active ? "auto" : "none",
                 }}
               >
-                <div className="mono mb-2 text-[10px] uppercase tracking-[0.32em] text-[color:var(--volt)] sm:mb-3 sm:text-[11px]">
+                <div className="mono mb-2 text-[10px] uppercase tracking-[0.32em] text-[color:var(--crimson)] sm:mb-3 sm:text-[11px]">
                   {s.kicker}
                 </div>
-                <h1 className="font-display text-3xl font-bold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-6xl lg:text-7xl">
+                <h1 className="font-display text-3xl font-bold leading-[1.05] tracking-tight text-navy sm:text-4xl md:text-6xl lg:text-7xl">
                   {s.title}
                 </h1>
-                <p className="mt-3 max-w-xl text-xs text-white/70 sm:mt-5 sm:text-sm md:text-base">
+                <p className="mt-3 max-w-xl text-xs text-navy sm:mt-5 sm:text-sm md:text-base">
                   {s.body}
                 </p>
               </div>
@@ -134,10 +134,10 @@ export function Hero({ onComplete }: { onComplete?: () => void }) {
           </div>
           {/* progress bar */}
           <div className="mt-6 flex items-center gap-4 sm:mt-8">
-            <div className="relative h-px flex-1 overflow-hidden bg-white/10">
-              <div className="absolute inset-y-0 left-0 bg-[color:var(--volt)] shadow-[0_0_12px_var(--volt)]" style={{ width: `${((active + 1) / SCENES.length) * 100}%` }} />
+            <div className="relative h-px flex-1 overflow-hidden bg-navy/5">
+              <div className="absolute inset-y-0 left-0 bg-[color:var(--crimson)] shadow-[0_0_12px_var(--crimson)]" style={{ width: `${((active + 1) / SCENES.length) * 100}%` }} />
             </div>
-            <span className="mono text-[10px] uppercase tracking-[0.3em] text-white/50">
+            <span className="mono text-[10px] uppercase tracking-[0.3em] text-navy">
               {String(active + 1).padStart(2, "0")} / {String(SCENES.length).padStart(2, "0")}
             </span>
           </div>

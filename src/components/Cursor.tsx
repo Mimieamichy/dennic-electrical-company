@@ -74,8 +74,8 @@ export function SparkCursor() {
   return (
     <>
       <canvas ref={trailRef} className="pointer-events-none fixed inset-0 z-[60]" />
-      <div ref={dotRef} className="pointer-events-none fixed left-0 top-0 z-[61] h-1.5 w-1.5 rounded-full bg-[color:var(--volt)] shadow-[0_0_10px_var(--volt)]" />
-      <div ref={ringRef} className="pointer-events-none fixed left-0 top-0 z-[61] h-9 w-9 rounded-full border border-[color:var(--volt)]/60" />
+      <div ref={dotRef} className="pointer-events-none fixed left-0 top-0 z-[61] h-1.5 w-1.5 rounded-full bg-[color:var(--crimson)] shadow-[0_0_10px_var(--crimson)]" />
+      <div ref={ringRef} className="pointer-events-none fixed left-0 top-0 z-[61] h-9 w-9 rounded-full border border-[color:var(--crimson)]/60" />
     </>
   );
 }

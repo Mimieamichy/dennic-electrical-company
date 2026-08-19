@@ -12,8 +12,8 @@ const NAV = [
 export function Header({ variant = "overlay" }: { variant?: "overlay" | "solid" }) {
   const wrapperClass =
     variant === "overlay"
-      ? "fixed inset-x-0 top-0 z-40 bg-[color:var(--navy-deep)]/60 backdrop-blur-md"
-      : "fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[color:var(--navy-deep)]/90 backdrop-blur";
+      ? "fixed inset-x-0 top-0 z-40 bg-white/60 backdrop-blur-md"
+      : "fixed inset-x-0 top-0 z-40 border-b border-navy/10 bg-white/90 backdrop-blur";
 
   return (
     <header className={wrapperClass}>
@@ -27,8 +27,8 @@ export function Header({ variant = "overlay" }: { variant?: "overlay" | "solid" 
             <Link
               key={l.to}
               to={l.to}
-              className="mono text-[11px] uppercase tracking-[0.24em] text-white/70 transition-colors hover:text-[color:var(--volt)]"
-              activeProps={{ className: "text-[color:var(--volt)]" }}
+              className="mono text-[11px] uppercase tracking-[0.24em] text-navy transition-colors hover:text-[color:var(--crimson)]"
+              activeProps={{ className: "text-[color:var(--crimson)]" }}
             >
               {l.label}
             </Link>
@@ -37,7 +37,7 @@ export function Header({ variant = "overlay" }: { variant?: "overlay" | "solid" 
 
         <Link
           to="/contact"
-          className="hidden rounded-full border border-[color:var(--volt)]/60 bg-[color:var(--volt)]/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-[color:var(--volt)] transition hover:bg-[color:var(--volt)] hover:text-[color:var(--navy-deep)] lg:inline-block"
+          className="hidden rounded-full border border-[color:var(--crimson)]/60 bg-[color:var(--crimson)]/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-[color:var(--crimson)] transition hover:bg-[color:var(--crimson)] hover:text-white lg:inline-block"
         >
           Request Quote
         </Link>

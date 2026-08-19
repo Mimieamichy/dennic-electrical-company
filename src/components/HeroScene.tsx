@@ -3,9 +3,9 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Float, Instances, Instance, Line, Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
-const NAVY = "#1D2B44";
-const NAVY_DEEP = "#0d1524";
-const VOLT = "#F4C430";
+const NAVY = "#2B254A";
+const NAVY_DEEP = "#1A162C";
+const VOLT = "#6B0A2B"; // Now Crimson
 const STEEL = "#7a8699";
 
 /* ============ Ground ============ */
@@ -14,9 +14,9 @@ function Ground() {
     <group>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.5, 0]} receiveShadow>
         <planeGeometry args={[200, 200]} />
-        <meshStandardMaterial color={NAVY_DEEP} roughness={0.9} metalness={0.1} />
+        <meshStandardMaterial color="#f8fafc" roughness={0.9} metalness={0.1} />
       </mesh>
-      <gridHelper args={[200, 80, VOLT, "#22314f"]} position={[0, -1.49, 0]} />
+      <gridHelper args={[200, 80, VOLT, "#e2e8f0"]} position={[0, -1.49, 0]} />
     </group>
   );
 }
@@ -331,11 +331,11 @@ function Scene({ progress }: { progress: number }) {
   return (
     <>
       <CameraRig progress={progress} />
-      <color attach="background" args={[NAVY_DEEP]} />
-      <fog attach="fog" args={[NAVY_DEEP, 12, 55]} />
+      <color attach="background" args={["#ffffff"]} />
+      <fog attach="fog" args={["#ffffff", 12, 55]} />
 
-      <ambientLight intensity={0.35} color="#6b7dad" />
-      <directionalLight position={[6, 10, 6]} intensity={0.9} color="#fff2c8" castShadow />
+      <ambientLight intensity={0.8} color="#ffffff" />
+      <directionalLight position={[6, 10, 6]} intensity={0.7} color="#ffffff" castShadow />
       <pointLight position={[-6, 4, 4]} intensity={0.7} color={VOLT} distance={20} />
       <pointLight position={[8, 5, -4]} intensity={0.5} color="#4a6bff" distance={22} />
 

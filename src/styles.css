@@ -34,8 +34,8 @@
   --color-navy: var(--navy);
   --color-navy-deep: var(--navy-deep);
   --color-navy-light: var(--navy-light);
-  --color-volt: var(--volt);
-  --color-volt-glow: var(--volt-glow);
+  --color-crimson: var(--crimson);
+  --color-crimson-glow: var(--crimson-glow);
   --color-steel: var(--steel);
   --color-graphite: var(--graphite);
 
@@ -47,47 +47,47 @@
   --radius: 0.5rem;
 
   /* Brand palette */
-  --navy-deep: oklch(0.18 0.04 258);       /* #0d1524-ish */
-  --navy: oklch(0.26 0.06 258);            /* #1D2B44 */
-  --navy-light: oklch(0.36 0.06 258);
-  --volt: oklch(0.86 0.18 92);             /* #F4C430 */
-  --volt-glow: oklch(0.92 0.19 95);
+  --navy-deep: #1A162C;       /* #0d1524-ish */
+  --navy: #2B254A;            /* #1D2B44 */
+  --navy-light: #3C3563;
+  --crimson: #6B0A2B;             /* #F4C430 */
+  --crimson-glow: #8B103E;
   --steel: oklch(0.72 0.02 258);
   --graphite: oklch(0.22 0.02 258);
 
-  --background: var(--navy-deep);
-  --foreground: oklch(0.98 0.005 258);
-  --card: oklch(0.22 0.04 258);
-  --card-foreground: oklch(0.98 0.005 258);
-  --popover: oklch(0.22 0.04 258);
-  --popover-foreground: oklch(0.98 0.005 258);
-  --primary: var(--volt);
+  --background: #ffffff;
+  --foreground: var(--navy);
+  --card: #ffffff;
+  --card-foreground: var(--navy);
+  --popover: #ffffff;
+  --popover-foreground: var(--navy);
+  --primary: var(--crimson);
   --primary-foreground: var(--navy-deep);
   --secondary: oklch(0.28 0.05 258);
   --secondary-foreground: oklch(0.98 0.005 258);
   --muted: oklch(0.24 0.03 258);
   --muted-foreground: oklch(0.72 0.02 258);
-  --accent: var(--volt);
+  --accent: var(--crimson);
   --accent-foreground: var(--navy-deep);
   --destructive: oklch(0.6 0.24 27);
   --destructive-foreground: oklch(0.98 0.005 258);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: var(--volt);
+  --ring: var(--crimson);
 
-  --gradient-hero: radial-gradient(ellipse at 50% 20%, oklch(0.32 0.06 258 / 0.6), transparent 60%), linear-gradient(180deg, var(--navy-deep) 0%, oklch(0.12 0.03 258) 100%);
-  --gradient-volt: linear-gradient(135deg, var(--volt) 0%, var(--volt-glow) 100%);
+  --gradient-hero: radial-gradient(ellipse at 50% 20%, rgba(43, 37, 74, 0.05), transparent 60%), linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  --gradient-crimson: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-glow) 100%);
   --gradient-steel: linear-gradient(180deg, oklch(0.3 0.04 258) 0%, oklch(0.2 0.03 258) 100%);
 
-  --shadow-volt: 0 0 40px oklch(0.86 0.18 92 / 0.35), 0 0 80px oklch(0.86 0.18 92 / 0.15);
+  --shadow-crimson: 0 0 40px rgba(107, 10, 43, 0.35), 0 0 80px rgba(107, 10, 43, 0.15);
   --shadow-card: 0 10px 40px -10px oklch(0 0 0 / 0.6);
 
   --grid-color: oklch(1 0 0 / 0.04);
 }
 
 .dark {
-  --background: var(--navy-deep);
-  --foreground: oklch(0.98 0.005 258);
+  --background: #ffffff;
+  --foreground: var(--navy);
 }
 
 @layer base {
@@ -95,12 +95,12 @@
     border-color: var(--color-border);
   }
   html, body {
-    background: var(--navy-deep);
-    color: var(--color-foreground);
+    background: var(--background);
+    color: var(--foreground);
     font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
   }
-  ::selection { background: var(--volt); color: var(--navy-deep); }
+  ::selection { background: var(--crimson); color: #ffffff; }
 }
 
 @utility grid-bg {
@@ -110,16 +110,16 @@
   background-size: 48px 48px;
 }
 
-@utility text-volt {
-  color: var(--volt);
+@utility text-crimson {
+  color: var(--crimson);
 }
 
-@utility bg-volt {
-  background: var(--gradient-volt);
+@utility bg-crimson {
+  background: var(--gradient-crimson);
 }
 
-@utility glow-volt {
-  box-shadow: var(--shadow-volt);
+@utility glow-crimson {
+  box-shadow: var(--shadow-crimson);
 }
 
 @utility hairline {
@@ -131,12 +131,12 @@
   letter-spacing: 0.02em;
 }
 
-@keyframes pulse-volt {
+@keyframes pulse-crimson {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 1; }
 }
-@utility animate-pulse-volt {
-  animation: pulse-volt 2.2s ease-in-out infinite;
+@utility animate-pulse-crimson {
+  animation: pulse-crimson 2.2s ease-in-out infinite;
 }
 
 @keyframes flow {
@@ -144,7 +144,7 @@
   100% { background-position: 200% 50%; }
 }
 @utility animate-flow {
-  background: linear-gradient(90deg, transparent, var(--volt), transparent);
+  background: linear-gradient(90deg, transparent, var(--crimson), transparent);
   background-size: 200% 100%;
   animation: flow 2.4s linear infinite;
 }

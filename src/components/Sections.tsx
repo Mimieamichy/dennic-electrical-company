@@ -16,14 +16,14 @@ gsap.registerPlugin(ScrollTrigger);
 function SectionHead({ kicker, title, sub }: { kicker: string; title: string; sub?: string }) {
   return (
     <div className="mb-10 max-w-3xl md:mb-14">
-      <div className="mono mb-3 flex items-center gap-3 text-[10px] uppercase tracking-[0.32em] text-[color:var(--volt)] sm:text-[11px] md:mb-4">
-        <span className="h-px w-6 bg-[color:var(--volt)] sm:w-8" />
+      <div className="mono mb-3 flex items-center gap-3 text-[10px] uppercase tracking-[0.32em] text-[color:var(--crimson)] sm:text-[11px] md:mb-4">
+        <span className="h-px w-6 bg-[color:var(--crimson)] sm:w-8" />
         {kicker}
       </div>
-      <h2 className="font-display text-3xl font-bold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+      <h2 className="font-display text-3xl font-bold leading-[1.05] tracking-tight text-navy sm:text-4xl md:text-5xl lg:text-6xl">
         {title}
       </h2>
-      {sub && <p className="mt-4 max-w-2xl text-sm text-white/60 sm:mt-5 md:text-lg">{sub}</p>}
+      {sub && <p className="mt-4 max-w-2xl text-sm text-navy sm:mt-5 md:text-lg">{sub}</p>}
     </div>
   );
 }
@@ -46,7 +46,7 @@ function Reveal({ children, className = "", delay = 0 }: { children: React.React
 /* ============ About ============ */
 export function About() {
   return (
-    <section id="about" className="relative border-t border-white/5 bg-[color:var(--navy-deep)] py-16 sm:py-24 md:py-32">
+    <section id="about" className="relative border-t border-navy/10 bg-white py-16 sm:py-24 md:py-32">
       <div className="grid-bg absolute inset-0 opacity-40" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10">
         <SectionHead
@@ -56,14 +56,14 @@ export function About() {
         />
         <div className="grid gap-10 md:grid-cols-3">
           {[
-            { k: "24", v: "Years operating", d: "Delivering high-voltage projects across four countries." },
+            { k: "24", v: "Years operating", d: "Delivering high-crimsonage projects across four countries." },
             { k: "1.4 GW", v: "Installed capacity", d: "From 400 V distribution up to 220 kV substations." },
             { k: "0", v: "Lost-time incidents", d: "Last 1,800 days on active construction sites." },
           ].map((s, i) => (
             <Reveal key={i} delay={i * 0.1} className="hairline rounded-xl bg-white/[0.02] p-8 backdrop-blur">
-              <div className="mono text-[11px] uppercase tracking-[0.3em] text-[color:var(--volt)]">{s.v}</div>
-              <div className="mt-3 font-display text-5xl font-bold tracking-tight text-white">{s.k}</div>
-              <p className="mt-4 text-sm text-white/60">{s.d}</p>
+              <div className="mono text-[11px] uppercase tracking-[0.3em] text-[color:var(--crimson)]">{s.v}</div>
+              <div className="mt-3 font-display text-5xl font-bold tracking-tight text-navy">{s.k}</div>
+              <p className="mt-4 text-sm text-navy">{s.d}</p>
             </Reveal>
           ))}
         </div>
@@ -75,7 +75,7 @@ export function About() {
 /* ============ Services ============ */
 const SERVICES = [
   { icon: Cable, title: "Construction of Lines", desc: "Expert construction and installation of electrical power lines for residential, commercial and industrial connections." },
-  { icon: Zap, title: "Transformer Installation", desc: "Professional installation of transformers for power distribution, ensuring safe and efficient voltage regulation." },
+  { icon: Zap, title: "Transformer Installation", desc: "Professional installation of transformers for power distribution, ensuring safe and efficient crimsonage regulation." },
   { icon: Building2, title: "House Wiring", desc: "Complete electrical house wiring services for new builds, renovations and rewiring projects to code standards." },
   { icon: Factory, title: "Sales & Supply of Electrical Materials", desc: "Supply of quality electrical materials including cables, switches, sockets, fittings and accessories." },
   { icon: Wrench, title: "Electrical Maintenance & Services", desc: "Routine and emergency maintenance services to keep your electrical systems running safely and efficiently." },
@@ -100,14 +100,14 @@ export function Services() {
   }, []);
 
   return (
-    <section id="services" className="relative border-t border-white/5 bg-[color:var(--navy)] py-16 sm:py-24 md:py-32">
+    <section id="services" className="relative border-t border-navy/10 bg-white py-16 sm:py-24 md:py-32">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10" ref={ref}>
         <SectionHead
           kicker="Our Services"
           title="Full-lifecycle capability, from single line to switch-on."
           sub="Six integrated disciplines under one accountable delivery team."
         />
-        <div className="grid gap-px overflow-hidden rounded-xl bg-white/10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-xl bg-navy/5 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => (
             <motion.div
               key={i}
@@ -116,19 +116,19 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: (i % 3) * 0.08 }}
-              className="group relative overflow-hidden bg-[color:var(--navy-deep)] p-8 transition"
+              className="group relative overflow-hidden bg-white p-8 transition"
               style={{
                 backgroundImage:
                   "radial-gradient(400px circle at var(--mx,50%) var(--my,50%), rgba(244,196,48,0.10), transparent 40%)",
               }}
             >
-              <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-md bg-[color:var(--volt)]/10 text-[color:var(--volt)] ring-1 ring-[color:var(--volt)]/30">
+              <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-md bg-[color:var(--crimson)]/10 text-[color:var(--crimson)] ring-1 ring-[color:var(--crimson)]/30">
                 <s.icon className="h-5 w-5" />
               </div>
-              <h3 className="font-display text-xl font-semibold text-white">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/60">{s.desc}</p>
+              <h3 className="font-display text-xl font-semibold text-navy">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-navy">{s.desc}</p>
 
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[color:var(--volt)]/60 to-transparent opacity-0 transition group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[color:var(--crimson)]/60 to-transparent opacity-0 transition group-hover:opacity-100" />
             </motion.div>
           ))}
         </div>
@@ -255,28 +255,28 @@ export function Projects() {
   const [active, setActive] = useState<Project | null>(null);
 
   return (
-    <section id="projects" className="relative border-t border-white/5 bg-[color:var(--navy-deep)] py-16 sm:py-24 md:py-32">
+    <section id="projects" className="relative border-t border-navy/10 bg-white py-16 sm:py-24 md:py-32">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10">
         <SectionHead
           kicker="Featured Projects"
           title="Selected work from the field."
           sub="A snapshot of recent turnkey deliveries across utility, industrial and renewables sectors."
         />
-        <div className="space-y-px overflow-hidden rounded-xl border border-white/10">
+        <div className="space-y-px overflow-hidden rounded-xl border border-navy/10">
           {PROJECTS.map((p, i) => (
             <Reveal key={i} delay={i * 0.05}>
               <button
                 type="button"
                 onClick={() => setActive(p)}
-                className="group grid w-full grid-cols-12 items-center gap-4 bg-[color:var(--navy)] px-4 py-5 text-left transition hover:bg-[color:var(--navy-light)]/40 sm:gap-6 sm:px-6 sm:py-6 md:px-10 md:py-8"
+                className="group grid w-full grid-cols-12 items-center gap-4 bg-white px-4 py-5 text-left transition hover:bg-[color:var(--navy-light)]/40 sm:gap-6 sm:px-6 sm:py-6 md:px-10 md:py-8"
               >
-                <div className="col-span-2 mono text-xs uppercase tracking-[0.3em] text-[color:var(--volt)]">{p.n}</div>
+                <div className="col-span-2 mono text-xs uppercase tracking-[0.3em] text-[color:var(--crimson)]">{p.n}</div>
                 <div className="col-span-10 min-w-0 md:col-span-5">
-                  <div className="font-display text-lg font-semibold text-white sm:text-xl md:text-2xl">{p.name}</div>
-                  <div className="mt-1 text-xs text-white/50">{p.tag}</div>
+                  <div className="font-display text-lg font-semibold text-navy sm:text-xl md:text-2xl">{p.name}</div>
+                  <div className="mt-1 text-xs text-navy">{p.tag}</div>
                 </div>
-                <div className="col-span-12 mono text-xs text-white/60 md:col-span-3">{p.stat}</div>
-                <div className="col-span-12 flex items-center justify-end gap-2 mono text-[11px] uppercase tracking-[0.3em] text-white/40 transition group-hover:text-[color:var(--volt)] md:col-span-2">
+                <div className="col-span-12 mono text-xs text-navy md:col-span-3">{p.stat}</div>
+                <div className="col-span-12 flex items-center justify-end gap-2 mono text-[11px] uppercase tracking-[0.3em] text-navy transition group-hover:text-[color:var(--crimson)] md:col-span-2">
                   Case study
                   <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </div>
@@ -314,14 +314,14 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-3 backdrop-blur-sm sm:p-6" onClick={onClose}>
       <div
-        className="relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--navy-deep)] shadow-2xl lg:grid lg:grid-cols-[1.2fr_1fr]"
+        className="relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-2xl lg:grid lg:grid-cols-[1.2fr_1fr]"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-[color:var(--volt)] hover:text-[color:var(--navy-deep)]"
+          className="absolute right-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-navy transition hover:bg-[color:var(--crimson)] hover:text-white"
         >
           <X className="h-4 w-4" />
         </button>
@@ -333,13 +333,13 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             alt={`${project.name} — image ${idx + 1}`}
             className="h-full w-full object-cover"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[color:var(--navy-deep)] via-transparent to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
 
           <button
             type="button"
             onClick={prev}
             aria-label="Previous"
-            className="absolute left-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-[color:var(--volt)] hover:text-[color:var(--navy-deep)]"
+            className="absolute left-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-navy transition hover:bg-[color:var(--crimson)] hover:text-white"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -347,7 +347,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             type="button"
             onClick={next}
             aria-label="Next"
-            className="absolute right-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-[color:var(--volt)] hover:text-[color:var(--navy-deep)]"
+            className="absolute right-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-navy transition hover:bg-[color:var(--crimson)] hover:text-white"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -360,7 +360,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                 aria-label={`Go to image ${i + 1}`}
                 onClick={() => setIdx(i)}
                 className={`h-1.5 rounded-full transition-all ${
-                  i === idx ? "w-8 bg-[color:var(--volt)]" : "w-1.5 bg-white/40 hover:bg-white/70"
+                  i === idx ? "w-8 bg-[color:var(--crimson)]" : "w-1.5 bg-white/40 hover:bg-white/70"
                 }`}
               />
             ))}
@@ -369,32 +369,32 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
         {/* Details */}
         <div className="flex-1 min-h-0 overflow-y-auto p-6 sm:p-10 lg:p-12 lg:h-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          <div className="mono text-[10px] uppercase tracking-[0.3em] text-[color:var(--volt)]">
+          <div className="mono text-[10px] uppercase tracking-[0.3em] text-[color:var(--crimson)]">
             {project.n} · {project.tag}
           </div>
-          <h3 className="mt-2 font-display text-2xl font-bold leading-tight text-white sm:text-3xl">
+          <h3 className="mt-2 font-display text-2xl font-bold leading-tight text-navy sm:text-3xl">
             {project.name}
           </h3>
 
           <div className="mt-10 flex flex-col gap-10">
             <div>
-              <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">Overview</div>
-              <p className="mt-3 text-[15px] leading-relaxed text-white/75">{project.summary}</p>
+              <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--crimson)]">Overview</div>
+              <p className="mt-3 text-[15px] leading-relaxed text-navy">{project.summary}</p>
             </div>
 
             <div>
-              <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">Scope of Works</div>
+              <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--crimson)]">Scope of Works</div>
               <ul className="mt-4 space-y-3">
                 {project.scope.map((s) => (
-                  <li key={s} className="flex items-start gap-3 text-[15px] text-white/75">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
+                  <li key={s} className="flex items-start gap-3 text-[15px] text-navy">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--crimson)]" />
                     <span>{s}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <aside className="grid grid-cols-2 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
+            <aside className="grid grid-cols-2 gap-6 border-t border-navy/10 pt-8 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
               {[
                 { k: "Client", v: project.client },
                 { k: "Location", v: project.location },
@@ -403,18 +403,18 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                 { k: "Stat", v: project.stat },
               ].map((it) => (
                 <div key={it.k}>
-                  <div className="mono text-[9px] uppercase tracking-[0.28em] text-white/40">{it.k}</div>
-                  <div className="mt-1.5 text-sm font-medium text-white/90">{it.v}</div>
+                  <div className="mono text-[9px] uppercase tracking-[0.28em] text-navy">{it.k}</div>
+                  <div className="mt-1.5 text-sm font-medium text-navy">{it.v}</div>
                 </div>
               ))}
             </aside>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/10 pt-6">
+          <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-navy/10 pt-6">
             <Link
               to="/contact"
               onClick={onClose}
-              className="ml-auto inline-flex items-center gap-2 rounded-full bg-[color:var(--volt)] px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-[color:var(--navy-deep)] transition hover:brightness-110"
+              className="ml-auto inline-flex items-center gap-2 rounded-full bg-[color:var(--crimson)] px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white transition hover:brightness-110"
             >
               Discuss a similar project <ArrowUpRight className="h-4 w-4" />
             </Link>
@@ -434,7 +434,7 @@ export function Safety() {
     { k: "NFPA 70E", v: "Electrical Safety Compliance" },
   ];
   return (
-    <section id="safety" className="relative border-t border-white/5 bg-[color:var(--navy-deep)] py-16 sm:py-24 md:py-32">
+    <section id="safety" className="relative border-t border-navy/10 bg-white py-16 sm:py-24 md:py-32">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10 grid gap-16 lg:grid-cols-2 lg:items-center">
         <div>
           <SectionHead
@@ -449,19 +449,19 @@ export function Safety() {
               "Two-person authorization on all HV operations",
               "Digital permit-to-work with audit trail",
             ].map((t) => (
-              <li key={t} className="flex items-start gap-3 text-white/75">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--volt)]" />
+              <li key={t} className="flex items-start gap-3 text-navy">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--crimson)]" />
                 <span>{t}</span>
               </li>
             ))}
           </ul>
         </div>
-        <div className="grid gap-px overflow-hidden rounded-xl bg-white/10 sm:grid-cols-2">
+        <div className="grid gap-px overflow-hidden rounded-xl bg-navy/5 sm:grid-cols-2">
           {stats.map((s, i) => (
-            <Reveal key={i} className="bg-[color:var(--navy)] p-8">
-              <ShieldCheck className="h-6 w-6 text-[color:var(--volt)]" />
-              <div className="mt-4 font-display text-2xl font-semibold text-white">{s.k}</div>
-              <div className="mt-1 text-xs text-white/50">{s.v}</div>
+            <Reveal key={i} className="bg-white p-8">
+              <ShieldCheck className="h-6 w-6 text-[color:var(--crimson)]" />
+              <div className="mt-4 font-display text-2xl font-semibold text-navy">{s.k}</div>
+              <div className="mt-1 text-xs text-navy">{s.v}</div>
             </Reveal>
           ))}
         </div>
@@ -478,15 +478,15 @@ export function WhyUs() {
     { k: "24/7 response", v: "Regional service hubs with two-hour emergency callout." },
   ];
   return (
-    <section className="relative border-t border-white/5 bg-[color:var(--navy)] py-16 sm:py-24 md:py-32">
+    <section className="relative border-t border-navy/10 bg-white py-16 sm:py-24 md:py-32">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10">
         <SectionHead kicker="Why Choose Us" title="Precision, accountability, and the discipline power work demands." />
-        <div className="divide-y divide-white/10 border-y border-white/10">
+        <div className="divide-y divide-white/10 border-y border-navy/10">
           {rows.map((r, i) => (
             <Reveal key={i} className="grid grid-cols-12 gap-6 py-8 md:py-10">
-              <div className="col-span-2 mono text-xs text-white/40">0{i + 1}</div>
-              <div className="col-span-10 md:col-span-4 font-display text-xl font-semibold text-white">{r.k}</div>
-              <div className="col-span-12 md:col-span-6 text-white/60">{r.v}</div>
+              <div className="col-span-2 mono text-xs text-navy">0{i + 1}</div>
+              <div className="col-span-10 md:col-span-4 font-display text-xl font-semibold text-navy">{r.k}</div>
+              <div className="col-span-12 md:col-span-6 text-navy">{r.v}</div>
             </Reveal>
           ))}
         </div>
@@ -507,9 +507,9 @@ const QUOTES = [
 
 function TestimonialCard({ q, a }: { q: string; a: string }) {
   return (
-    <div className="mx-3 w-[300px] shrink-0 rounded-xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur sm:mx-4 sm:w-[380px] sm:p-8">
-      <p className="text-sm leading-relaxed text-white/80 sm:text-[15px]">"{q}"</p>
-      <div className="mt-6 mono text-[11px] uppercase tracking-[0.24em] text-[color:var(--volt)]">{a}</div>
+    <div className="mx-3 w-[300px] shrink-0 rounded-xl border border-navy/10 bg-white/[0.03] p-6 backdrop-blur sm:mx-4 sm:w-[380px] sm:p-8">
+      <p className="text-sm leading-relaxed text-navy sm:text-[15px]">"{q}"</p>
+      <div className="mt-6 mono text-[11px] uppercase tracking-[0.24em] text-[color:var(--crimson)]">{a}</div>
     </div>
   );
 }
@@ -533,7 +533,7 @@ export function Testimonials() {
   const first = QUOTES.slice(0, 3);
   const second = QUOTES.slice(3);
   return (
-    <section className="relative border-t border-white/5 bg-[color:var(--navy-deep)] py-16 sm:py-24 md:py-32">
+    <section className="relative border-t border-navy/10 bg-white py-16 sm:py-24 md:py-32">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10">
         <SectionHead kicker="Clients" title="What our clients say." />
       </div>
@@ -548,8 +548,8 @@ export function Testimonials() {
 /* ============ CTA + Contact ============ */
 export function Contact() {
   return (
-    <section id="contact" className="relative border-t border-white/5 bg-[color:var(--navy)] py-16 sm:py-24 md:py-32 overflow-hidden">
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-[color:var(--volt)]/10 blur-3xl" />
+    <section id="contact" className="relative border-t border-navy/10 bg-white py-16 sm:py-24 md:py-32 overflow-hidden">
+      <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-[color:var(--crimson)]/10 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10 grid gap-16 lg:grid-cols-2">
         <div>
           <SectionHead
@@ -557,16 +557,16 @@ export function Contact() {
             title="Have a project? Let's engineer the power behind it."
             sub="Tell us about your site, load profile and timeline. A senior engineer will respond within one business day."
           />
-          <div className="space-y-4 mono text-sm text-white/60">
-            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Email</span> dan.ntukokwu@gmail.com</div>
-            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Phone</span> 08069041115</div>
-            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Phone</span> 07043535279</div>
-            <div><span className="text-white/40 uppercase tracking-[0.24em] text-[10px] mr-3">Office</span> Km 2, Isuaniocha-Mgbakwu Road by Sharon Plaza, beside Palkon Hills &amp; Hotels, Isuaniocha, Awka North L.G.A, Anambra State</div>
+          <div className="space-y-4 mono text-sm text-navy">
+            <div><span className="text-navy uppercase tracking-[0.24em] text-[10px] mr-3">Email</span> dan.ntukokwu@gmail.com</div>
+            <div><span className="text-navy uppercase tracking-[0.24em] text-[10px] mr-3">Phone</span> 08069041115</div>
+            <div><span className="text-navy uppercase tracking-[0.24em] text-[10px] mr-3">Phone</span> 07043535279</div>
+            <div><span className="text-navy uppercase tracking-[0.24em] text-[10px] mr-3">Office</span> Km 2, Isuaniocha-Mgbakwu Road by Sharon Plaza, beside Palkon Hills &amp; Hotels, Isuaniocha, Awka North L.G.A, Anambra State</div>
           </div>
         </div>
         <form
           onSubmit={(e) => { e.preventDefault(); alert("Thank you — our engineering team will be in touch."); }}
-          className="hairline rounded-xl bg-[color:var(--navy-deep)]/60 p-8 backdrop-blur"
+          className="hairline rounded-xl bg-white/60 p-8 backdrop-blur"
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Name" name="name" />
@@ -577,16 +577,16 @@ export function Contact() {
               <Field label="Project type" name="type" placeholder="e.g. 33 kV substation, industrial fit-out" />
             </div>
             <div className="sm:col-span-2">
-              <label className="mono text-[10px] uppercase tracking-[0.28em] text-white/50">Brief</label>
+              <label className="mono text-[10px] uppercase tracking-[0.28em] text-navy">Brief</label>
               <textarea
                 rows={4}
-                className="mt-2 w-full resize-none rounded-md border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-white outline-none transition focus:border-[color:var(--volt)] focus:bg-white/[0.05]"
+                className="mt-2 w-full resize-none rounded-md border border-navy/10 bg-white/[0.03] px-3 py-2 text-sm text-navy outline-none transition focus:border-[color:var(--crimson)] focus:bg-white/[0.05]"
               />
             </div>
           </div>
           <button
             type="submit"
-            className="group mt-8 inline-flex items-center gap-2 rounded-full bg-[color:var(--volt)] px-6 py-3 text-sm font-semibold text-[color:var(--navy-deep)] transition hover:brightness-110 glow-volt"
+            className="group mt-8 inline-flex items-center gap-2 rounded-full bg-[color:var(--crimson)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110 glow-crimson"
           >
             Send request
             <Send className="h-4 w-4 transition group-hover:translate-x-0.5" />
@@ -600,12 +600,12 @@ export function Contact() {
 function Field({ label, name, type = "text", placeholder }: { label: string; name: string; type?: string; placeholder?: string }) {
   return (
     <div>
-      <label className="mono text-[10px] uppercase tracking-[0.28em] text-white/50">{label}</label>
+      <label className="mono text-[10px] uppercase tracking-[0.28em] text-navy">{label}</label>
       <input
         name={name}
         type={type}
         placeholder={placeholder}
-        className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-white outline-none transition focus:border-[color:var(--volt)] focus:bg-white/[0.05]"
+        className="mt-2 w-full rounded-md border border-navy/10 bg-white/[0.03] px-3 py-2 text-sm text-navy outline-none transition focus:border-[color:var(--crimson)] focus:bg-white/[0.05]"
       />
     </div>
   );
@@ -618,6 +618,7 @@ const QUICK_LINKS = [
   { to: "/projects" as const, label: "Projects" },
   { to: "/about" as const, label: "About" },
   { to: "/contact" as const, label: "Contact" },
+  { to: "/careers" as const, label: "Careers" },
 ];
 
 const SERVICES_LINKS = [
@@ -629,21 +630,19 @@ const SERVICES_LINKS = [
   "Consultancy & General Contracting",
 ];
 
-const SOCIALS = [
-  { icon: Facebook, href: "https://web.facebook.com/daniel.ntukokwu.9", label: "Facebook" },
-];
+const SOCIALS: { icon: any; href: string; label: string }[] = [];
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[color:var(--navy-deep)] px-4 pt-14 pb-10 sm:px-6 md:px-10 md:pt-20">
+    <footer className="border-t border-navy/10 bg-white px-4 pt-14 pb-10 sm:px-6 md:px-10 md:pt-20">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4">
             <Logo />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-navy">
               Dennic Electrical Construction Company designs, constructs and commissions
-              high-voltage electrical infrastructure for utilities, industry and renewables.
+              high-crimsonage electrical infrastructure for utilities, industry and renewables.
             </p>
             <div className="mt-6 flex items-center gap-2">
               {SOCIALS.map((s) => (
@@ -653,7 +652,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={s.label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/70 transition hover:border-[color:var(--volt)]/60 hover:bg-[color:var(--volt)]/10 hover:text-[color:var(--volt)]"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-navy/10 bg-white/[0.03] text-navy transition hover:border-[color:var(--crimson)]/60 hover:bg-[color:var(--crimson)]/10 hover:text-[color:var(--crimson)]"
                 >
                   <s.icon className="h-4 w-4" />
                 </a>
@@ -663,7 +662,7 @@ export function Footer() {
 
           {/* Quick links */}
           <div className="col-span-1 md:col-span-2">
-            <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">
+            <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--crimson)]">
               Quick Links
             </div>
             <ul className="mt-5 space-y-3">
@@ -671,7 +670,7 @@ export function Footer() {
                 <li key={l.to}>
                   <Link
                     to={l.to}
-                    className="text-sm text-white/70 transition hover:text-[color:var(--volt)]"
+                    className="text-sm text-navy transition hover:text-[color:var(--crimson)]"
                   >
                     {l.label}
                   </Link>
@@ -682,7 +681,7 @@ export function Footer() {
 
           {/* Services */}
           <div className="col-span-1 md:col-span-3">
-            <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">
+            <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--crimson)]">
               Services
             </div>
             <ul className="mt-5 space-y-3">
@@ -690,7 +689,7 @@ export function Footer() {
                 <li key={s}>
                   <Link
                     to="/services"
-                    className="text-sm text-white/70 transition hover:text-[color:var(--volt)]"
+                    className="text-sm text-navy transition hover:text-[color:var(--crimson)]"
                   >
                     {s}
                   </Link>
@@ -701,39 +700,36 @@ export function Footer() {
 
           {/* Contact */}
           <div className="col-span-2 md:col-span-3">
-            <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--volt)]">
+            <div className="mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--crimson)]">
               Get In Touch
             </div>
-            <ul className="mt-5 space-y-3 text-sm text-white/70">
+            <ul className="mt-5 space-y-3 text-sm text-navy">
               <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
-                <a href="mailto:dan.ntukokwu@gmail.com" className="transition hover:text-[color:var(--volt)]">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--crimson)]" />
+                <a href="mailto:dan.ntukokwu@gmail.com" className="transition hover:text-[color:var(--crimson)]">
                   dan.ntukokwu@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--crimson)]" />
                 <div className="flex flex-col gap-1">
-                  <a href="tel:08069041115" className="transition hover:text-[color:var(--volt)]">08069041115</a>
-                  <a href="tel:07043535279" className="transition hover:text-[color:var(--volt)]">07043535279</a>
+                  <a href="tel:08069041115" className="transition hover:text-[color:var(--crimson)]">08069041115</a>
+                  <a href="tel:07043535279" className="transition hover:text-[color:var(--crimson)]">07043535279</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--volt)]" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--crimson)]" />
                 <span>Km 2, Isuaniocha-Mgbakwu Road by Sharon Plaza, beside Palkon Hills &amp; Hotels, Isuaniocha, Awka North L.G.A, Anambra State</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center">
-          <div className="mono text-[11px] uppercase tracking-[0.28em] text-white/40">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-navy/10 pt-6 md:flex-row md:items-center">
+          <div className="mono text-[11px] uppercase tracking-[0.28em] text-navy">
             © {new Date().getFullYear()} Dennic Electrical Construction Company · All rights reserved
           </div>
-          <div className="flex items-center gap-6 mono text-[11px] uppercase tracking-[0.24em] text-white/50">
-            <a href="#" className="transition hover:text-[color:var(--volt)]">Privacy</a>
-            <a href="#" className="transition hover:text-[color:var(--volt)]">Terms</a>
-            <a href="#" className="transition hover:text-[color:var(--volt)]">Careers</a>
+          <div className="flex items-center gap-6 mono text-[11px] uppercase tracking-[0.24em] text-navy">
           </div>
         </div>
       </div>
@@ -745,19 +741,19 @@ export function Footer() {
 export function GridStrip() {
   const items = [
     { i: Gauge, k: "99.998%", v: "Uptime commissioned" },
-    { i: Zap, k: "220 kV", v: "Max voltage class" },
+    { i: Zap, k: "220 kV", v: "Max crimsonage class" },
     { i: Cable, k: "3,400 km", v: "Cable installed" },
     { i: ShieldCheck, k: "0", v: "LTIs · 1,800 days" },
   ];
   return (
-    <section className="border-t border-white/5 bg-[color:var(--navy-deep)]">
+    <section className="border-t border-navy/10 bg-white">
       <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/10 px-6 md:grid-cols-4 md:px-10">
         {items.map((it, i) => (
           <div key={i} className="flex items-center gap-4 py-8 first:pl-0 md:pl-8">
-            <it.i className="h-5 w-5 text-[color:var(--volt)]" />
+            <it.i className="h-5 w-5 text-[color:var(--crimson)]" />
             <div>
-              <div className="font-display text-2xl font-semibold text-white">{it.k}</div>
-              <div className="mono text-[10px] uppercase tracking-[0.24em] text-white/50">{it.v}</div>
+              <div className="font-display text-2xl font-semibold text-navy">{it.k}</div>
+              <div className="mono text-[10px] uppercase tracking-[0.24em] text-navy">{it.v}</div>
             </div>
           </div>
         ))}

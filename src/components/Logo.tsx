@@ -9,10 +9,10 @@ export function Logo({ className = "" }: { className?: string }) {
         className="h-9 w-9 shrink-0 object-contain"
       />
       <div className="leading-tight">
-        <div className="font-display text-[13px] sm:text-[15px] font-bold tracking-tight text-white">
+        <div className="font-display text-[13px] sm:text-[15px] font-bold tracking-tight text-navy">
           DENNIC
         </div>
-        <div className="mono text-[8px] sm:text-[9px] uppercase tracking-[0.24em] text-[color:var(--volt)]/80">
+        <div className="mono text-[8px] sm:text-[9px] uppercase tracking-[0.24em] text-[color:var(--crimson)]/80">
           Electrical Construction Co.
         </div>
       </div>
