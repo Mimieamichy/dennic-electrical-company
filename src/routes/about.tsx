@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
-import { PageHero } from "@/components/PageHero";
 import { About, Safety, WhyUs, Footer } from "@/components/Sections";
 
 export const Route = createFileRoute("/about")({

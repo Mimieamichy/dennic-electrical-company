@@ -558,7 +558,7 @@ export function Contact() {
             sub="Tell us about your site, load profile and timeline. A senior engineer will respond within one business day."
           />
           <div className="space-y-4 mono text-sm text-navy">
-            <div><span className="text-navy uppercase tracking-[0.24em] text-[10px] mr-3">Email</span> dan.ntukokwu@gmail.com</div>
+            <div><span className="text-navy uppercase tracking-[0.24em] text-[10px] mr-3">Email</span> dennicelectricals.co@gmail.com</div>
             <div><span className="text-navy uppercase tracking-[0.24em] text-[10px] mr-3">Phone</span> 08069041115</div>
             <div><span className="text-navy uppercase tracking-[0.24em] text-[10px] mr-3">Phone</span> 07043535279</div>
             <div><span className="text-navy uppercase tracking-[0.24em] text-[10px] mr-3">Office</span> Km 2, Isuaniocha-Mgbakwu Road by Sharon Plaza, beside Palkon Hills &amp; Hotels, Isuaniocha, Awka North L.G.A, Anambra State</div>
@@ -617,6 +617,7 @@ const QUICK_LINKS = [
   { to: "/services" as const, label: "Services" },
   { to: "/projects" as const, label: "Projects" },
   { to: "/about" as const, label: "About" },
+  { to: "/store" as const, label: "Store" },
   { to: "/contact" as const, label: "Contact" },
   { to: "/careers" as const, label: "Careers" },
 ];
@@ -706,8 +707,8 @@ export function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-navy">
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--crimson)]" />
-                <a href="mailto:dan.ntukokwu@gmail.com" className="transition hover:text-[color:var(--crimson)]">
-                  dan.ntukokwu@gmail.com
+                <a href="mailto:dennicelectricals.co@gmail.com" className="transition hover:text-[color:var(--crimson)]">
+                  dennicelectricals.co@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
